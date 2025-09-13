@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bdogrotesk Vf";
+  src: url("/fonts/Bdogrotesk-VF.ttf") format("truetype");
+  font-weight: 100 900; 
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-green: #D2F0A3;
+  --color-brand-text: #303A46;
+  --font-sans: "Bdogrotesk Vf", sans-serif;
+}
+
+html,
+body {
+  @apply font-sans text-brand-text bg-white;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+}
