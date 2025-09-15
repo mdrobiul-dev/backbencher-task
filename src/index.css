@@ -24,3 +24,9 @@ body {
 body {
   margin: 0;
 }
+
+@layer base {
+  html.w-mod-touch * {
+    background-attachment: scroll !important;
+  }
+}

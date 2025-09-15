@@ -1,37 +1,33 @@
+import { useEffect } from "react";
+
 const Header = () => {
+  useEffect(() => {
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+      document.documentElement.classList.add("w-mod-touch");
+    }
+  }, []);
+
   return (
-    <section className="my-10 flex justify-center items-center">
-      <div className="relative z-[5] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-6 text-center w-full max-w-[780px] h-full mx-0">
-        <div className="w-fit bg-[#1313130f] font-sans font-medium py-1.5 px-4 rounded-[200px]">
+    <div className="flex flex-col gap-x-6 gap-y-6 text-center justify-center items-center w-full h-auto min-h-[70vh] overflow-hidden pt-[60px] md:pt-[100px]">
+      <div className="flex flex-col gap-x-6 gap-y-6 text-center justify-center items-center w-full max-w-[780px] h-full relative mx-0">
+        <div className="bg-[#1313130f] text-sm font-medium px-4 py-1.5 rounded-[200px]">
           Personal Growth
         </div>
 
-        <div className="w-full max-w-[780px] flex flex-col items-center gap-6">
-          <h1
-            className="
-      tracking-[-0.03em] mt-0 mb-0 font-sans font-bold leading-[1] text-center
-      text-[32px] sm:text-[48px] md:text-[72px] lg:text-[100px]
-    "
-          >
-            Feel more
-            <br />
-            <span className="whitespace-nowrap">human every day</span>
-          </h1>
+        <h1 className="text-[#303a46] tracking-[-0.03em] text-[clamp(2.8rem,8vw,6rem)] font-bold leading-none my-0 font-sans">
+          Feel more human every day
+        </h1>
 
-          <button
-            className="
-      mx-auto flex justify-center items-center
-      text-[#415326] bg-[#d2f0a3]
-      rounded-full px-[36px] py-4
-      text-[16px] font-medium
-    "
-          >
-            Request demo
-          </button>
-        </div>
+        <a
+          href="#"
+          className="max-w-full text-[#415326] bg-[#d2f0a3] flex justify-center items-center text-base font-medium no-underline px-[30px] py-4 rounded-[100px] hover:bg-[#c1e88d] transition-colors"
+        >
+          Request demo
+        </a>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default Header;
+
